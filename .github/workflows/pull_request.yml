@@ -30,3 +30,9 @@ jobs:
       - name: Run tests
         run: dotnet test --no-build --verbosity normal
         working-directory: ./SimplePipelineAPI
+
+      - name: .NET Lint
+        uses: zyactions/dotnet-lint@v1
+        with:
+          workspace: SimplePipelineAPI/SimplePipelineAPI.csproj
+          implicit-restore: true
