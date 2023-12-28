@@ -11,4 +11,12 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="D:\Work\Criteria\SimplePipelineAPI\SimplePipelineAPI\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="D:\Work\Criteria\SimplePipelineAPI\SimplePipelineAPI\.editorconfig" />
+  </ItemGroup>
+
 </Project>
