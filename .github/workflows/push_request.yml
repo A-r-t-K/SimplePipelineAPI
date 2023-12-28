@@ -7,6 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -18,12 +19,15 @@ jobs:
 
       - name: Restore dependencies
         run: dotnet restore
+        working-directory: ./SimplePipelineAPI
 
       - name: Rub build
         run: dotnet build --no-restore
+        working-directory: ./SimplePipelineAPI
 
       - name: Run publish
-        run: dotnet publish WebAPI/WebAPI.csproj -c Release -o app
+        run: dotnet publish SimplePipelineAPI.csproj -c Release -o app
+        working-directory: ./SimplePipelineAPI
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3.1.3

@@ -7,6 +7,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      working-directory: ./SimplePipelineAPI
 
     steps:
       - name: Checkout repository
@@ -19,9 +21,12 @@ jobs:
 
       - name: Restore dependencies
         run: dotnet restore
+        working-directory: ./SimplePipelineAPI
 
       - name: Rub build
         run: dotnet build --no-restore
+        working-directory: ./SimplePipelineAPI
 
       - name: Run tests
         run: dotnet test --no-build --verbosity normal
+        working-directory: ./SimplePipelineAPI
